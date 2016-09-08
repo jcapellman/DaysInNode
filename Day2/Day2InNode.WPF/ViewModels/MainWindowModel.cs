@@ -22,7 +22,7 @@ namespace Day2InNode.WPF.ViewModels {
         private static string getURL(bool forWebAPI) {
             var port = forWebAPI ? WebAPIPort : NodeJSPort;
 
-            return $"http://localhost:{port}/api/Test";
+            return $"http://localhost:{port}/api/Test?id=2";
         }
         
         public bool RunBenchmark(bool forWebAPI) {
