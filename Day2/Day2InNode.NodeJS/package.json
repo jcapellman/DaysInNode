@@ -1,0 +1,12 @@
+{
+  "name": "day2-in-node.node-js",
+  "version": "0.0.0",
+  "description": "Day2InNode.NodeJS",
+  "main": "server.js",
+  "author": {
+    "name": "jcape"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}

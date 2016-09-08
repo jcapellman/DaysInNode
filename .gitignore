@@ -1,0 +1,13 @@
+bin/
+obj/
+.vs/
+*.apk
+*.user
+*.lock.json
+*.bak
+Day/Day1InNode.NodeJS/node_modules/
+Day/Day2InNode.NodeJS/node_modules/
+express
+packages
+mongodb
+mongojs
