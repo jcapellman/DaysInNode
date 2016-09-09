@@ -6,8 +6,7 @@ using DayInNode.WebAPI.Entities.Objects;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DayInNode.WebAPI.Controllers {
-    [Route("api/[controller]")]
-    public class TestController : Controller {
+    public class TestController : BaseController {
         private readonly EntityFactory _context;
 
         public TestController(EntityFactory context) {
