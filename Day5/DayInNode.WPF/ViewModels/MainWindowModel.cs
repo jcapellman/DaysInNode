@@ -24,12 +24,11 @@ namespace DayInNode.WPF.ViewModels {
             set { _selectedBenchmark = value; OnPropertyChanged(); }
         }
 
-        private bool _enableRunButton;
+        private bool _enableForm;
 
-        public bool EnableRunButton
-        {
-            get { return _enableRunButton; }
-            set { _enableRunButton = value; OnPropertyChanged(); }
+        public bool EnableForm {
+            get { return _enableForm; }
+            set { _enableForm = value; OnPropertyChanged(); }
         }
 
         private Visibility _progressIndicatorVisibility;
@@ -37,7 +36,7 @@ namespace DayInNode.WPF.ViewModels {
         public Visibility ProgressIndicatorVisibility {
             get { return _progressIndicatorVisibility; }
             set { _progressIndicatorVisibility = value; OnPropertyChanged();
-                EnableRunButton = (value != Visibility.Visible);
+                EnableForm = (value != Visibility.Visible);
             }
         }
 
@@ -71,8 +70,15 @@ namespace DayInNode.WPF.ViewModels {
 
         public async void RunBenchmark() {
             ProgressIndicatorVisibility = Visibility.Visible;
+            var start = DateTime.Now;
 
-            BenchmarkTestString = await SelectedBenchmark.RunBenchmark();
+            BenchmarkTestString = $"--Starting {SelectedBenchmark.Name} test @ {start}--{System.Environment.NewLine}";
+            
+            for (var x = 10; x < Common.Constants.MAX_BENCH; x *= 2) {
+                BenchmarkTestString += await SelectedBenchmark.RunBench(x);
+            }
+
+            BenchmarkTestString += $"--Completed {SelectedBenchmark.Name} test in {DateTime.Now.Subtract(start).TotalSeconds} seconds--";
 
             ProgressIndicatorVisibility = Visibility.Hidden;
         }

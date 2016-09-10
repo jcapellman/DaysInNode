@@ -17,9 +17,9 @@
         <TextBox Grid.Row="0" IsReadOnly="True" Margin="10,10,10,10"  VerticalScrollBarVisibility="Auto" Text="{Binding BenchmarkTestString, Mode=OneWay}" />
 
         <TextBlock Grid.Row="1" Margin="10,0,10,0" Text="Selected Benchmark:" />
-        <ComboBox Grid.Row="2" Margin="10,5,10,10" ItemsSource="{Binding Benchmarks}" SelectedItem="{Binding SelectedBenchmark, Mode=TwoWay}" DisplayMemberPath="Name"  />
-        
-        <Button Grid.Row="3" Margin="10,10,10,10" Click="ButtonBase_OnClick" IsEnabled="{Binding EnableRunButton, Mode=OneWay}" Content="Run Benchmark" />
+        <ComboBox Grid.Row="2" Margin="10,5,10,10" ItemsSource="{Binding Benchmarks}" IsEnabled="{Binding EnableForm, Mode=OneWay}" SelectedItem="{Binding SelectedBenchmark, Mode=TwoWay}" DisplayMemberPath="Name"  />
+
+        <Button Grid.Row="3" Margin="10,10,10,10" Click="ButtonBase_OnClick" IsEnabled="{Binding EnableForm, Mode=OneWay}" Content="Run Benchmark" />
         
         <ProgressBar Grid.Row="0" VerticalAlignment="Center" IsIndeterminate="True" Visibility="{Binding ProgressIndicatorVisibility}" Margin="10,0,10,0" Height="20" Width="150" Background="Transparent" />
     </Grid>

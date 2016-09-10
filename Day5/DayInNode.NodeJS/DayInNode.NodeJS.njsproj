@@ -30,7 +30,6 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="config.js" />
     <Compile Include="server.js" />
     <Content Include="package.json" />
   </ItemGroup>

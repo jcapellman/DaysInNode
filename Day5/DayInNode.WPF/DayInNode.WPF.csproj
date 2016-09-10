@@ -68,6 +68,7 @@
     <Compile Include="Benchmarks\ASPNETSQLServerBenchmark.cs" />
     <Compile Include="Benchmarks\BaseBenchmark.cs" />
     <Compile Include="Benchmarks\NodeJSMongoDBBenchmark.cs" />
+    <Compile Include="Common\Constants.cs" />
     <Compile Include="ViewModels\MainWindowModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

@@ -19,21 +19,7 @@ namespace DayInNode.WPF.Benchmarks {
         public string Name => GetName();
 
         public int Port => GetPort();
-
-        public async Task<string> RunBenchmark() {
-            var start = DateTime.Now;
-
-            var benchString = $"--Starting {Name} test @ {start}--{System.Environment.NewLine}";
-
-            for (var x = 10; x < MAX_BENCH; x *= 2) {
-                benchString += await RunBench(x);
-            }
-
-            benchString += $"--Completed {Name} test in {DateTime.Now.Subtract(start).TotalSeconds} seconds--";
-
-            return benchString;
-        }
-
+        
         public async Task<string> RunBench(int numIterations) {
             var start = DateTime.Now;
             
