@@ -11,17 +11,17 @@ var db = mongojs(dburl, collections);
 var postData = db.collection('posts');
 
 app.get('/api/Test',
-    function (req, res) {
-        var id = req.param('id');
+    function (request, response) {
+        var id = request.params.id;
 
         var newData = { 'id': id, 'likes': 2 };
-
+        
         postData.insert(newData, function(err, post) {
             if (err) {
-                return res.json({ message: err });
+                return response.json({ message: err });
             }
             
-            return res.json({ message: true });
+            return response.json({ message: true });
         });        
     });
 
