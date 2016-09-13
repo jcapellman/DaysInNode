@@ -1,0 +1,15 @@
+{
+  "name": "day-in-node.node-js",
+  "version": "0.0.0",
+  "description": "DayInNode.NodeJS",
+  "main": "server.js",
+  "author": {
+    "name": "jcape"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongojs": "^2.4.0",
+    "mongoose": "^4.6.0",
+    "pm2": "^1.1.3"
+  }
+}
