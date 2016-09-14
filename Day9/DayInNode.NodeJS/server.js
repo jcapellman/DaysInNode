@@ -1,18 +1,9 @@
-﻿var cluster = require("cluster");
+﻿var restify = require('restify');
+var settings = require('./config');
+var testRouter = require('./test.router'); 
 
-cluster.setupMaster({
-    exec: 'worker.js',
-    silent: true
-});
+var server = restify.createServer();
 
-var numCPUs = require("os").cpus().length;
+testRouter.applyRoutes(server);
 
-if (cluster.isMaster) {
-    for (var i = 0; i < numCPUs; i++) {
-        cluster.fork();
-    }
-
-    cluster.on("exit", function (worker, code, signal) {
-        cluster.fork();
-    });
-}
+server.listen(settings.HTTP_SERVER_PORT);

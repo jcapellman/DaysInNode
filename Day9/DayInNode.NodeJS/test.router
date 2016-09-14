@@ -1,10 +1,10 @@
-﻿var express = require('express');
+﻿var Router = require('restify-router').Router;
+
+var router = new Router();
 var Post = require('./dbFactory');
 
-var router = express.Router();
-
-router.get('/api/Test', function (request, response) {
-    var argId = request.params.id;
+function respond(request, response, next) {
+   var argId = request.params.id;
 
     var newPost = new Post({ id: argId, likes: 2 });
 
@@ -15,6 +15,8 @@ router.get('/api/Test', function (request, response) {
 
         return response.json({ message: true });
     });
-});
+}
+
+router.get('/api/Test', respond);
 
 module.exports = router;
