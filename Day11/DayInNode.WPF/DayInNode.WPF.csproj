@@ -65,6 +65,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Benchmarks\ASPNETMongoDBBenchmark.cs" />
+    <Compile Include="Benchmarks\ASPNETRedisDBBenchmark.cs" />
     <Compile Include="Benchmarks\ASPNETSQLServerBenchmark.cs" />
     <Compile Include="Benchmarks\BaseBenchmark.cs" />
     <Compile Include="Benchmarks\NodeJSMongoDBBenchmark.cs" />

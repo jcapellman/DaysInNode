@@ -16,10 +16,7 @@
     "DayInNode.WebAPI": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5000/api/values",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      }
+      "launchUrl": "http://localhost:1337/api/Test?id=2"
     }
   }
 }
