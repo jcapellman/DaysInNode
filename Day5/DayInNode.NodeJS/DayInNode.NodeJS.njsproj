@@ -32,6 +32,7 @@
   <ItemGroup>
     <Compile Include="routes.js" />
     <Compile Include="server.js" />
+    <Content Include="libman.json" />
     <Content Include="package.json" />
   </ItemGroup>
   <ItemGroup>
